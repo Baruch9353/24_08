@@ -21,7 +21,7 @@ async function fetchFromAPI() {
                 description: a.description || "",
                 content: a.content || "",
                 urlToImage: a.urlToImage || "",
-                url: a.url || "" 
+                url: a.url || ""
             }));
         }
     } catch (err) {
@@ -41,8 +41,11 @@ function renderPage(page = "home", data = null) {
 
     const nav = document.createElement("nav");
     nav.innerHTML = `
+      <span>חדשות מהעולם</span>
+      <div>
       <button id="homeBtn">דף הבית</button>
       <button id="createBtn">צור כתבה</button>
+      </div>
     `;
     app.appendChild(nav);
 
@@ -114,12 +117,14 @@ function renderCreate(app) {
                 description: document.getElementById("description").value,
                 content: document.getElementById("content").value,
                 urlToImage: reader.result || "",
-                url: "" 
+                url: ""
             };
 
             let articles = loadArticles();
             articles.unshift(newArticle);
             saveArticles(articles);
+
+            alert("הכתבה נוספה בהצלחה!");
 
             navigate("home");
         };
