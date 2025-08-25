@@ -7,16 +7,26 @@ body {
 }
 
 /* סרגל ניווט */
+/* סרגל ניווט */
 nav {
     position: sticky;
     top: 0;
     background: #1976d2;
     padding: 1rem;
     display: flex;
-    gap: 1rem;
+    justify-content: space-between; /* מפריד בין הכותרת לכפתורים */
+    align-items: center; /* מיישר אנכית באמצע */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 10;
 }
+
+/* הכותרת בסרגל */
+nav span {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 
 nav button {
     background: #fff;
