@@ -1,4 +1,4 @@
-import { API_URL } from "./env.js";
+import { API_URL } from "./env..js";
 
 function saveArticles(articles) {
     localStorage.setItem("articles", JSON.stringify(articles));
