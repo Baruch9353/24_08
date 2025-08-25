@@ -41,10 +41,10 @@ function renderPage(page = "home", data = null) {
 
     const nav = document.createElement("nav");
     nav.innerHTML = `
-      <span>חדשות מהעולם</span>
+      <span>World News</span>
       <div>
-      <button id="homeBtn">דף הבית</button>
-      <button id="createBtn">צור כתבה</button>
+      <button id="createBtn">Create an article</button>
+      <button id="homeBtn">Home </button>
       </div>
     `;
     app.appendChild(nav);
@@ -72,7 +72,7 @@ function renderHome(app) {
           <div class="content">
             <h3>${article.title}</h3>
             <p><b>${article.author}</b></p>
-            <button class="btn readBtn">קרא כתבה מלאה</button>
+            <button class="btn readBtn">Read full article</button>
           </div>
         `;
 
@@ -96,12 +96,12 @@ function renderHome(app) {
 function renderCreate(app) {
     const form = document.createElement("form");
     form.innerHTML = `
-      <input type="text" placeholder="כותרת" id="title" required>
-      <input type="text" placeholder="מחבר" id="author">
-      <textarea placeholder="תיאור קצר" id="description"></textarea>
-      <textarea placeholder="תוכן מלא" id="content"></textarea>
+      <input type="text" placeholder="title" id="title" required>
+      <input type="text" placeholder="author" id="author">
+      <textarea placeholder="Short description" id="description"></textarea>
+      <textarea placeholder="Full content" id="content"></textarea>
       <input type="file" id="image">
-      <button type="submit">שמור</button>
+      <button type="submit">Save</button>
     `;
 
     form.onsubmit = (e) => {
@@ -124,7 +124,7 @@ function renderCreate(app) {
             articles.unshift(newArticle);
             saveArticles(articles);
 
-            alert("הכתבה נוספה בהצלחה!");
+            alert("The article was added successfully!");
 
             navigate("home");
         };
